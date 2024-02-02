@@ -12,6 +12,11 @@ body {
   padding: 275px 90px;
 }
 
+.visits {
+  margin-bottom: -20px;
+  margin-left:-100px;
+}
+
 .Name {
   color: rgb(255, 255, 255);
   position:absolute;
