@@ -1,4 +1,4 @@
-let AUdio = new Audio('https://github.com/zyqunix/zyqunix/blob/main/Sunset.mp3')
+let AUdio = new Audio('Sunset(1).mp3')
 AUdio.autoplay = true
 AUdio.loop = true
 AUdio.volume = 0.3
