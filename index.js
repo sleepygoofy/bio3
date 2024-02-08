@@ -1,6 +1,6 @@
 let docTitle = document.title;
 window.addEventListener("blur", () =>{
-  document.title = "Come Back pls";
+  document.title = "Come back pls";
 }
 
 let docTitle = document.title;
