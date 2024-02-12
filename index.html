@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="icon" type="image/jpeg" href="https://github.com/zyqunix/zyqunix/blob/main/vjkdvv.jpeg">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/zyqunix/zyqunix/main/logo2131232.ico">
     <link rel="stylesheet" href="style.css">
     <title>zy's page</title>
 </head>
@@ -9,39 +9,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
     <script src="index.js"></script>
-    <script src="index2.js"></script>
 
     <div class="Main">
 
         <div class="Intro" width="100%">
             <h2> 
-                <img id="avatar" src="https://cdn.discordapp.com/avatars/527854415336701963/8197e168f73fbf2421819cb8659d3528" class="w3-circle" width="52" alt="">
+                <img class="avatar" src="https://cdn.discordapp.com/avatars/527854415336701963/8197e168f73fbf2421819cb8659d3528" width="52">
                 <a href="https://zyqunix.github.io/zyqunix2/" target="_blank">
                     <u class="Name">zyqunix</u>
                 </a>
             </h2>
             
-        <h4 class="desc" width="100%">15 yo. amateur programmer and ROBLOX game developer</h4>
+        <h4 class="desc">15 yo. amateur programmer and ROBLOX game developer</h4>
         </div>
 
-        <div class="Links" width="600px">
-            <a class="yt" href="https://www.youtube.com/channel/UCS_LSx5Ccj9ti2EmrZ0OXVg" target="_blank">
+        <div class="Links">
+            <a title="YouTube" class="yt" href="https://www.youtube.com/channel/UCS_LSx5Ccj9ti2EmrZ0OXVg" target="_blank">
                 <img class="yti" src="https://media.discordapp.net/attachments/1195008134394163205/1196505115411087390/white_youtube.png?ex=65b7df39&is=65a56a39&hm=5a569ec22e4ada2213e818534e6402484429e3aeef5ad4cdd10c6803dd4dabd8&=&format=webp&quality=lossless&width=640&height=640" width="36">
             </a>
 
-            <a class="ghub" href="https://www.github.com/skorpionsk" target="_blank">
+            <a title="GitHub" class="ghub" href="https://www.github.com/skorpionsk" target="_blank">
                 <img class="ghubi" src="https://media.discordapp.net/attachments/1195008134394163205/1196505115876659292/white_github.png?ex=65b7df39&is=65a56a39&hm=136e9b34b2aebbac763c2ea9e5721da28aa767caa7828236097e53bad275a1c1&=&format=webp&quality=lossless&width=661&height=670" width="36">
             </a>
 
-            <a class="guns" href="https://guns.lol/zyqunix" target="_blank">
+            <a title="guns.lol" class="guns" href="https://guns.lol/zyqunix" target="_blank">
                 <img class="gunsi" src="https://media.discordapp.net/attachments/1195008134394163205/1196505116216406056/white_guns.png?ex=65b7df39&is=65a56a39&hm=a28e524b86bcadae03624056f0bb40d3c6640c392ff7e51c295434741532a00d&=&format=webp&quality=lossless&width=387&height=401" width="36">
             </a>
 
-            <a class="ig" href="https://www.instagram.com/zyqunix" target="_blank">
+            <a title="Instagram" class="ig" href="https://www.instagram.com/zyqunix" target="_blank">
                 <img class="igi" src="https://media.discordapp.net/attachments/1195008134394163205/1196505116539359312/white_instagram.png?ex=65b7df39&is=65a56a39&hm=177af0cf24997d09ce6224837714ae8c91d864718fff3eccb3101eca707d1d65&=&format=webp&quality=lossless&width=670&height=670" width="36">
             </a>
+
         </div>
     </div>
+
+    <div id="button" title="Click The Button">
+        <h4 id="score">0</h4>
+    </div>
     
+    <script>
+        let counter = 0;
+        let buttonEnabled = true; // Track if the button is enabled
+        let hotkeyEnabled = true; // Track if the hotkey is enabled
+
+        // Function to update the counter display
+        function updateCounterDisplay() {
+            document.getElementById('score').innerText = counter;
+        }
+
+        // Function to add 2 to the counter
+        function doubleCounter() {
+            counter += 2;
+            updateCounterDisplay();
+        }
+
+        document.getElementById('button').onclick = () => {
+            if (counter < 9999) { // Check if the counter is less than 9999
+                counter++;
+                updateCounterDisplay();
+            }
+
+            if (counter > 9999 && buttonEnabled) {
+                doubleCounter(); // Add 2 to the counter when it reaches 9999
+                counter = 0; // Reset the counter
+                buttonEnabled = false; // Disable the button
+                document.getElementById('button').disabled = true; // Disable the button
+                hotkeyEnabled = true; // Disable the hotkey
+            }
+        };
+
+        // Listen for keydown events on the document
+        document.addEventListener('keydown', (event) => {
+            // Check if the hotkey is enabled and the pressed key is 'r'
+            if (hotkeyEnabled && event.key.toLowerCase() === 'r') {
+                doubleCounter(); // Add 2 to the counter when 'r' is pressed
+            }
+        });
+    </script>
+
 </body>
 </html>
