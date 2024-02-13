@@ -12,7 +12,7 @@
 
     <div class="Main">
 
-        <div class="Intro" width="100%">
+        <div class="Intro" style="width: max-content;">
             <h2> 
                 <img class="avatar" src="https://cdn.discordapp.com/avatars/527854415336701963/8197e168f73fbf2421819cb8659d3528" width="52">
                 <a href="https://zyqunix.github.io/zyqunix2/" target="_blank">
@@ -20,7 +20,7 @@
                 </a>
             </h2>
             
-        <h4 class="desc">15 yo. amateur programmer and ROBLOX game developer</h4>
+        <h3 class="desc" style="width: max-content;">15 yo. amateur programmer and ROBLOX game developer</h3>
         </div>
 
         <div class="Links">
@@ -43,7 +43,7 @@
         </div>
     </div>
 
-    <div id="button" title="Click The Button">
+    <div id="button" title="Click The Button!">
         <h4 id="score">0</h4>
     </div>
     
@@ -67,14 +67,13 @@
             if (counter < 9999) { // Check if the counter is less than 9999
                 counter++;
                 updateCounterDisplay();
+                hotkeyEnabled = true;
             }
 
             if (counter > 9999 && buttonEnabled) {
                 doubleCounter(); // Add 2 to the counter when it reaches 9999
                 counter = 0; // Reset the counter
-                buttonEnabled = false; // Disable the button
-                document.getElementById('button').disabled = true; // Disable the button
-                hotkeyEnabled = true; // Disable the hotkey
+                hotkeyEnabled = false; // Disable the button
             }
         };
 
