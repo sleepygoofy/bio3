@@ -51,6 +51,7 @@ h1, h2, h3, h4, h5, h6, a {
 .avatar {
   border-radius: 50%;
   user-select: none;
+  user-drag: none; 
 }
 
 .desc {
@@ -61,11 +62,13 @@ h1, h2, h3, h4, h5, h6, a {
 .yti:hover, .ghubi:hover, .igi:hover, .gunsi:hover, #button:hover, #score {
   transform: scale(1.3);
   transition: .3s ease;
+  user-drag: none; 
 }
 
 .yti:not(:hover), .ghubi:not(:hover),.igi:not(:hover), .gunsi:not(:hover), .Name:not(:hover), #button:not(:hover), #score {
   transform: scale(1);
   transition: 0.3s;
+  user-drag: none; 
 }
 
 .Name:hover {
