@@ -26,10 +26,10 @@ body {
 
 
 .Main {
-  margin-top: 3%;
+  margin-top: 55%;
+  margin-left: 10%;
   position: absolute;
   width: 500px;
-  padding: 275px 90px;
 }
 
 .Links {
