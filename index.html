@@ -41,50 +41,52 @@
             </a>
 
         </div>
-    </div>
 
-    <div id="button" title="Click The Button!">
-        <h4 id="score">0</h4>
-    </div>
+        <div id="button" title="Click The Button!">
+            <h4 id="score">0</h4>
+        </div>
     
-    <script>
-        let counter = 0;
-        let buttonEnabled = true; // Track if the button is enabled
-        let hotkeyEnabled = true; // Track if the hotkey is enabled
-
-        // Function to update the counter display
-        function updateCounterDisplay() {
-            document.getElementById('score').innerText = counter;
-        }
-
-        // Function to add 2 to the counter
-        function doubleCounter() {
-            counter += 2;
-            updateCounterDisplay();
-        }
-
-        document.getElementById('button').onclick = () => {
-            if (counter < 9999) { // Check if the counter is less than 9999
-                counter++;
+        <script>
+            let counter = 0;
+            let buttonEnabled = true; // Track if the button is enabled
+            let hotkeyEnabled = true; // Track if the hotkey is enabled
+    
+            // Function to update the counter display
+            function updateCounterDisplay() {
+                document.getElementById('score').innerText = counter;
+            }
+    
+            // Function to add 2 to the counter
+            function doubleCounter() {
+                counter += 2;
                 updateCounterDisplay();
-                hotkeyEnabled = true;
             }
+    
+            document.getElementById('button').onclick = () => {
+                if (counter < 9999) { // Check if the counter is less than 9999
+                    counter++;
+                    updateCounterDisplay();
+                    hotkeyEnabled = true;
+                }
+    
+                if (counter > 9999 && buttonEnabled) {
+                    doubleCounter(); // Add 2 to the counter when it reaches 9999
+                    counter = 0; // Reset the counter
+                    hotkeyEnabled = false; // Disable the button
+                }
+            };
+    
+            // Listen for keydown events on the document
+            document.addEventListener('keydown', (event) => {
+                // Check if the hotkey is enabled and the pressed key is 'r'
+                if (hotkeyEnabled && event.key.toLowerCase() === 'r') {
+                    doubleCounter(); // Add 2 to the counter when 'r' is pressed
+                }
+            });
+        </script>
+    </div>
 
-            if (counter > 9999 && buttonEnabled) {
-                doubleCounter(); // Add 2 to the counter when it reaches 9999
-                counter = 0; // Reset the counter
-                hotkeyEnabled = false; // Disable the button
-            }
-        };
-
-        // Listen for keydown events on the document
-        document.addEventListener('keydown', (event) => {
-            // Check if the hotkey is enabled and the pressed key is 'r'
-            if (hotkeyEnabled && event.key.toLowerCase() === 'r') {
-                doubleCounter(); // Add 2 to the counter when 'r' is pressed
-            }
-        });
-    </script>
+    
 
 </body>
 </html>
