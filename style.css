@@ -4,15 +4,12 @@ body {
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(https://freshcredit.com/wp-content/uploads/2022/01/Brand-Background-Elements-8.gif);
   background-position-x: center !important;
   -webkit-user-drag: none;
-}
 
-body {
-    animation: fadeInAnimation ease 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 
-@keyframes fadeInAnimation {
+  @keyframes fadeInAnimation {
     0% {
         opacity: 0;
     }
@@ -20,6 +17,11 @@ body {
     100% {
         opacity: 1;
     }
+  }
+}
+
+.desc {
+    user-select: none;
 }
 
 #button {
