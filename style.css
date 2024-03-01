@@ -22,29 +22,51 @@ body {
   }
 }
 
-.desc {
-    user-select: none;
-}
-
-/* Style for the image button */
-.yt {
+.yt, .ghub, .guns, .ig, .desc {
+  user-select: none;
   position: relative;
   display: inline-block;
 }
 
-/* Style for the text that will appear on hover */
-.YTb {
+.YTb, .GHb, .GLb ,.IGb {
+  font-weight: bold;
   position: absolute;
-  top: 20px; /* Adjust the distance from the button */
+  top: 40px;
   left: 50%;
-  transform: translateX(50%);
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease-in-out;
-  pointer-events: none; /* Allows clicks to go through the text */
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+  pointer-events: none; 
+  user-select: none;
 }
 
-/* Hover effect */
-.yt:hover .YTb {
+.yt:hover .YTb, .ghub:hover .GHb, .guns:hover .GLb, .ig:hover .IGb, .desc:hover .descB {
+  transition-delay: 155ms;
+  opacity: 1;
+}
+
+.Bb {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  user-select: none;
+}
+
+.descB {
+  color: white;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  user-select: none;
+}
+
+#button:hover .Bb {
+  transition-delay: 100ms;
   opacity: 1;
 }
 
@@ -102,7 +124,7 @@ h1, h2, h3, h4, h5, h6, a {
 }
 
 .desc {
-  margin-top: -10px;
+  margin-top: -5px;
 }
 
 
@@ -119,7 +141,7 @@ h1, h2, h3, h4, h5, h6, a {
 }
 
 .Name:hover {
-  transform: scale(1.15);
+  transform: scale(1.1);
   transition: 0.3s;
 }
 .yt, .ghub, .gus, .ig {
