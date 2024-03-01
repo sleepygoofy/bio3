@@ -37,7 +37,7 @@ body {
   position: absolute;
   top: 20px; /* Adjust the distance from the button */
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(50%);
   opacity: 0; /* Initially hidden */
   transition: opacity 0.3s ease-in-out;
   pointer-events: none; /* Allows clicks to go through the text */
