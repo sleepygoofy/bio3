@@ -48,7 +48,7 @@ body {
 .Bb {
   position: absolute;
   top: 50px;
-  left: 50%;
+  left: -50%;
   transform: translateX(50%);
   opacity: 0;
   transition: opacity 0.3s ease;
