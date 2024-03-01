@@ -26,6 +26,29 @@ body {
     user-select: none;
 }
 
+/* Style for the image button */
+.yt {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style for the text that will appear on hover */
+.YTb {
+  position: absolute;
+  top: -20px; /* Adjust the distance from the button */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none; /* Allows clicks to go through the text */
+}
+
+/* Hover effect */
+.yt:hover .YTb {
+  opacity: 1;
+}
+
+
 #button {
   width: 50px;
   height: 50px;
