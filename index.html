@@ -22,7 +22,10 @@
                 </a>
             </h2>
             
-        <h3 class="desc" style="width: max-content;" title="6 computer languages: Python, HTML, CSS, JS, Lua, EOS;                                                       5 actual languages: English, German, French, Czech, Slovak">15 yo. amateur programmer and ROBLOX game developer</h3>
+            <h3 class="desc" style="width: max-content;">
+                15 yo. amateur programmer and ROBLOX game developer
+            </h3>
+            <div class="descB">6 computer languages: Python, HTML, CSS, JS, Lua, EOS; 5 actual languages: English, German, French, Czech, Slovak</div>
         </div>
 
         <div class="Links">
@@ -31,63 +34,67 @@
                 <div class="YTb">YouTube</div>
             </a>
 
-            <a title="GitHub" class="ghub" href="https://www.github.com/skorpionsk" target="_blank">
+            <a class="ghub" href="https://www.github.com/zyqunix" target="_blank">
                 <img class="ghubi" src="https://github.com/zyqunix/zyqunix/blob/main/white_github.png?raw=true" width="36">
+                <div class="GHb">GitHub</div>
             </a>
 
-            <a title="guns.lol" class="guns" href="https://guns.lol/zyqunix" target="_blank">
+            <a class="guns" href="https://guns.lol/zyqunix" target="_blank">
                 <img class="gunsi" src="https://github.com/zyqunix/zyqunix/blob/main/white_guns.png?raw=true" width="36">
+                <div class="GLb">guns.lol</div>
             </a>
 
-            <a title="Instagram" class="ig" href="https://www.instagram.com/zyqunix" target="_blank">
+            <a class="ig" href="https://www.instagram.com/zyqunix" target="_blank">
                 <img class="igi" src="https://github.com/zyqunix/zyqunix/blob/main/white_instagram.png?raw=true" width="36">
+                <div class="IGb">Instagram</div>
             </a>
 
         </div>
     </div>
 
-    <div id="button" title="Click The Button!">
-            <h4 id="score">0</h4>
-        </div>
+    <div id="button">
+        <h4 id="score">0</h4>
+        <div class="Bb" style="font-size: small; color: white;">Click The Button!</div>
+    </div>
     
-        <script>
-            let counter = 0;
-            let buttonEnabled = true; // Track if the button is enabled
-            let hotkeyEnabled = true; // Track if the hotkey is enabled
-    
-            // Function to update the counter display
-            function updateCounterDisplay() {
-                document.getElementById('score').innerText = counter;
-            }
-    
-            // Function to add 2 to the counter
-            function doubleCounter() {
-                counter += 2;
+    <script>
+        let counter = 0;
+        let buttonEnabled = true; // Track if the button is enabled
+        let hotkeyEnabled = true; // Track if the hotkey is enabled
+
+        // Function to update the counter display
+        function updateCounterDisplay() {
+            document.getElementById('score').innerText = counter;
+        }
+
+        // Function to add 2 to the counter
+        function doubleCounter() {
+            counter += 2;
+            updateCounterDisplay();
+        }
+
+        document.getElementById('button').onclick = () => {
+            if (counter < 9999) { // Check if the counter is less than 9999
+                counter++;
                 updateCounterDisplay();
+                hotkeyEnabled = true;
             }
-    
-            document.getElementById('button').onclick = () => {
-                if (counter < 9999) { // Check if the counter is less than 9999
-                    counter++;
-                    updateCounterDisplay();
-                    hotkeyEnabled = true;
-                }
-    
-                if (counter > 9999 && buttonEnabled) {
-                    doubleCounter(); // Add 2 to the counter when it reaches 9999
-                    counter = 0; // Reset the counter
-                    hotkeyEnabled = false; // Disable the button
-                }
-            };
-    
-            // Listen for keydown events on the document
-            document.addEventListener('keydown', (event) => {
-                // Check if the hotkey is enabled and the pressed key is 'r'
-                if (hotkeyEnabled && event.key.toLowerCase() === 'r') {
-                    doubleCounter(); // Add 2 to the counter when 'r' is pressed
-                }
-            });
-        </script>
+
+            if (counter > 9999 && buttonEnabled) {
+                doubleCounter(); // Add 2 to the counter when it reaches 9999
+                counter = 0; // Reset the counter
+                hotkeyEnabled = false; // Disable the button
+            }
+        };
+
+        // Listen for keydown events on the document
+        document.addEventListener('keydown', (event) => {
+            // Check if the hotkey is enabled and the pressed key is 'r'
+            if (hotkeyEnabled && event.key.toLowerCase() === 'r') {
+                doubleCounter(); // Add 2 to the counter when 'r' is pressed
+            }
+        });
+    </script>
 
 </body>
 </html>
