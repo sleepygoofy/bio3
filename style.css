@@ -41,7 +41,7 @@ body {
 }
 
 .yt:hover .YTb, .ghub:hover .GHb, .guns:hover .GLb, .ig:hover .IGb, .desc:hover .descB {
-  transition-delay: 750ms;
+  transition-delay: 250ms;
   opacity: 1;
 }
 
