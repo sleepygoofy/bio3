@@ -5,6 +5,19 @@
     <link rel="stylesheet" href="style.css">
     <title>zy's page</title>
 </head>    
+
+    <script>
+        let docTitle = document.title;
+        
+        window.addEventListener("blur", () => {
+          document.title = "Come back pls";
+        })
+        
+        window.addEventListener("focus", () => {
+          document.title = docTitle; // Restore the title to its original value
+        })
+
+    </script>
     
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
