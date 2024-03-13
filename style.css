@@ -22,6 +22,9 @@ body {
   }
 }
 
+.ghub {
+  margin-left: 1px;
+}
 .yt, .ghub, .guns, .ig, .desc {
   user-select: none;
   position: relative;
@@ -45,16 +48,6 @@ body {
   opacity: 1;
 }
 
-.Bb {
-  position: absolute;
-  top: 50px;
-  left: 0%;
-  transform: translateX(0%);
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  user-select: none;
-}
-
 .descB {
   color: white;
   position: absolute;
@@ -62,22 +55,23 @@ body {
   transition: opacity 0.3s ease;
   pointer-events: none;
   user-select: none;
+  margin-left: 500px;
+  margin-top: 10px;
+  width: 1000px;
 }
 
-#button .Bb {
+.button .Bb {
   opacity: 0;
-  transition: opacity 1.5s; /* Set transition property for opacity */
+  transition: opacity 0.5s; /* Set transition property for opacity */
 }
 
-#button:hover .Bb {
-  transition-delay: 100ms;
+.button:hover .Bb {
   opacity: 1;
 }
 
-
-#button {
-  width: 50px;
-  height: 50px;
+.button {
+  width: 75px;
+  height: 75px;
   background-color: rgb(19, 19, 19);
   border-radius: 50%;
   margin-top: 10px;
@@ -89,13 +83,13 @@ body {
   -webkit-user-drag: none;
 }
 
-#score {
+.score {
+  font-size: larger;
   color: white;
   user-select: none;
-  margin-top: 30%;
+  margin-top: 27.5px;
   -webkit-user-drag: none;
 }
-
 
 .Main {
   margin-top: 295px;
@@ -131,23 +125,148 @@ h1, h2, h3, h4, h5, h6, a {
   margin-top: -5px;
 }
 
+.button:hover {
+  transform: scale(1.1);
+  transition: 0.2s ease;
+}
 
-.yti:hover, .ghubi:hover, .igi:hover, .gunsi:hover, #button:hover, #score {
+.yti:hover, .ghubi:hover, .igi:hover, .gunsi:hover, .score {
   transform: scale(1.3);
-  transition: .3s ease;
+  transition: 0.3s ease;
   -webkit-user-drag: none;
 }
 
-.yti:not(:hover), .ghubi:not(:hover),.igi:not(:hover), .gunsi:not(:hover), .Name:not(:hover), #button:not(:hover), #score {
+.yti:not(:hover), .ghubi:not(:hover),.igi:not(:hover), .gunsi:not(:hover), .button:not(:hover), .score {
   transform: scale(1);
   transition: 0.3s;
   -webkit-user-drag: none;
 }
 
-.Name:hover {
-  transform: scale(1.1);
-  transition: 0.3s;
+.Name:active {
+  transform: scale(0.9);
 }
 .yt, .ghub, .guns, .ig {
   -webkit-user-drag: none;
+}
+
+.freePoints {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: blueviolet;
+  margin-top: 42.5%;
+  margin-left: 1.3%;
+  text-size-adjust: auto;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
+
+.pointsText {
+  transform: translateY(-50%);
+  font-size: x-small;
+  user-select: none;
+  text-wrap: balance;
+}
+
+.screen {
+  user-select: none;
+  opacity: 0;
+  background-color: rgb(30, 30, 30);
+  width: 40%;
+  height: 400px;
+  text-align: center;
+  position: absolute;
+  margin-left: 500px;
+  margin-top: 150px;
+}
+
+.screenText {
+  transform: translateY(100px);
+}
+
+.closeScreen {
+  background-color: rgb(19, 19, 19);
+  width: 25%;
+  height: 50px;
+  margin-top: 40%;
+  margin-left: 35%;
+}
+
+.freePoints:active {
+  transform: scale(0.9);
+}
+
+.closeText {
+  transform: translateY(10px);
+}
+
+.closeScreen:active {
+  transform: scale(0.9);
+}
+
+.myInput, .inputEthereum {
+  position: absolute;
+  margin-top: 10000px;
+
+}
+
+.bitcoin, .Ethereum {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  margin-top: 10000px;
+  cursor: pointer;
+}
+
+.bitcoinIMG {
+  width: 36px;
+  rotate: -45deg;
+  position: absolute;
+  margin-top: -10001px;
+  margin-left: 6px;
+}
+
+.ethIMG {
+  width: 36px;
+  position: absolute;
+  margin-top: -10001px;
+  margin-left: 54px;
+}
+
+.bitcoinIMG:hover, .ethIMG:hover {
+  transform: scale(1.3);
+  transition: 0.3s ease;
+  -webkit-user-drag: none;
+}
+
+.bitcoinIMG:not(:hover), .ethIMG:not(:hover) {
+  transform: scale(1);
+  transition: 0.3s ease;
+  -webkit-user-drag: none;
+}
+
+.BTb {
+  width: 100px;
+  text-align: center;
+  color: white;
+  position: absolute;
+  margin-left: 150px;
+  margin-top: 1px;
+  font-weight: bold;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.ETb {
+  width: 100px;
+  text-align: center;
+  color: white;
+  position: absolute;
+  margin-left: 195px;
+  margin-top: 1px;
+  font-weight: bold;
+  opacity: 0;
+  transition: 0.3s ease;
 }
