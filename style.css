@@ -66,6 +66,7 @@ body {
 }
 
 .button:hover .Bb {
+  color: #ffffff;
   opacity: 1;
 }
 
@@ -264,7 +265,7 @@ h1, h2, h3, h4, h5, h6, a {
   text-align: center;
   color: white;
   position: absolute;
-  margin-left: 195px;
+  margin-left: 198px;
   margin-top: 1px;
   font-weight: bold;
   opacity: 0;
