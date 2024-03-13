@@ -4,26 +4,9 @@
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/zyqunix/zyqunix/main/logo2131232.ico">
     <link rel="stylesheet" href="style.css">
     <title>zy's page</title>
-</head>    
-
-    <script>
-        let docTitle = document.title;
-        
-        window.addEventListener("blur", () => {
-          document.title = "Come back pls";
-        })
-        
-        window.addEventListener("focus", () => {
-          document.title = docTitle; // Restore the title to its original value
-        })
-
-    </script>
-    
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
 <body>
     <script src="index.js"></script>
+    <script src="points.js"></script>
 
     <div class="Main">
 
@@ -36,9 +19,9 @@
             </h2>
             
             <h3 class="desc" style="width: max-content;">
-                15 yo. amateur programmer and ROBLOX game developer
+                15 yo. amateur programmer and ROBLOX game developer            
+                <div class="descB">6 computer languages: Python, HTML, CSS, JS, Lua, EOS; 5 actual languages: English, German, French, Czech, Slovak</div>
             </h3>
-            <div class="descB">6 computer languages: Python, HTML, CSS, JS, Lua, EOS; 5 actual languages: English, German, French, Czech, Slovak</div>
         </div>
 
         <div class="Links">
@@ -62,51 +45,134 @@
                 <div class="IGb">Instagram</div>
             </a>
 
+            <input class="myInput" id="myInput" type="text" value="bc1qv5uptn8zcg4ddkr49uz4zga84jfg548aezk27g">
+            <button id="bitcoin" class="bitcoin" onclick="copyCoin()">
+                <img class="bitcoinIMG" src="bitcoin123-removebg.png">
+            </button>
+
+            <div id="BTb" class="BTb">Copy Address</div>
+
+            <input class="inputEthereum" id="inputEthereum" type="text" value="0x10114a351c1eb1751D464B55D92BaDaB7Bb2Cedf">
+            <button id="Ethereum" class="Ethereum" onclick="copyCoin()">
+                <img class="ethIMG" src="ethereum.png" width="36">
+            </button>
+
+            <div id="ETb" class="ETb">Copy Address</div>
+
         </div>
     </div>
 
-    <div id="button">
-        <h4 id="score">0</h4>
-        <div class="Bb" style="font-size: small; color: white;">Click The Button!</div>
+    <div id="freePoints" class="freePoints">
+        <h6 id="pointsText" class="pointsText">Click Me For POINTS!</h6>
+    </div>
+
+    <div id="button" class="button">
+        <h4 id="score" class="score">0</h4>
+        <div class="Bb" id="Bb">Click The Button!</div>
+    </div>
+
+    <div class="screen" id="screen">
+        <h1 class="screenText">NO FREE POINTS</h1>
+        <div class="closeScreen" id="closeScreen">
+            <h2 class="closeText" id="closeText">Close</h2>
+        </div>
     </div>
     
     <script>
-        let counter = 0;
-        let buttonEnabled = true; // Track if the button is enabled
-        let hotkeyEnabled = true; // Track if the hotkey is enabled
 
-        // Function to update the counter display
+        document.querySelector('.bitcoinIMG').addEventListener('mouseover', function() {
+            setTimeout(function() {
+                document.querySelector('.BTb').style.opacity = 1;
+            }, 250);
+        });
+
+        document.querySelector('.bitcoinIMG').addEventListener('mouseout', function() {
+            setTimeout(function() {
+                document.querySelector('.BTb').style.opacity = 0;
+            });
+        });
+
+
+        document.querySelector('.ethIMG').addEventListener('mouseover', function() {
+            setTimeout(function() {
+                document.querySelector('.ETb').style.opacity = 1;
+            }, 250);
+        });
+
+        document.querySelector('.ethIMG').addEventListener('mouseout', function() {
+            setTimeout(function() {
+                document.querySelector('.ETb').style.opacity = 0;
+            });
+        });
+
+        function copyCoin() {
+            var copyBTC = document.getElementById("myInput");
+            var copyEth = document.getElementById("inputEthereum")
+
+            copyBTC.select();
+            copyEth.select()
+            copyBTC.setSelectionRange(0, 99999); 
+            copyEth.setSelectionRange(0, 9999);
+
+            navigator.clipboard.writeText(copyBTC.value);
+            navigator.clipboard.writeText(copyEth.value);
+        } 
+
+
+        let counter = 0;
+        let buttonEnabled = true;
+        let hotkeyEnabled = true;
+        let Bb = document.getElementById('Bb')
+
         function updateCounterDisplay() {
             document.getElementById('score').innerText = counter;
         }
 
-        // Function to add 2 to the counter
         function doubleCounter() {
             counter += 2;
             updateCounterDisplay();
         }
 
         document.getElementById('button').onclick = () => {
-            if (counter < 9999) { // Check if the counter is less than 9999
+            Bb.style.opacity = '0';
+            if (counter < 9999) {
                 counter++;
                 updateCounterDisplay();
                 hotkeyEnabled = true;
+                console.log("Clicked!")
             }
 
             if (counter > 9999 && buttonEnabled) {
-                doubleCounter(); // Add 2 to the counter when it reaches 9999
-                counter = 0; // Reset the counter
-                hotkeyEnabled = false; // Disable the button
+                doubleCounter(); 
+                counter = 0; 
+                hotkeyEnabled = false; 
             }
         };
 
-        // Listen for keydown events on the document
         document.addEventListener('keydown', (event) => {
-            // Check if the hotkey is enabled and the pressed key is 'r'
             if (hotkeyEnabled && event.key.toLowerCase() === 'r') {
-                doubleCounter(); // Add 2 to the counter when 'r' is pressed
+                doubleCounter();
             }
         });
+
+
+        let freePoints = document.getElementById('freePoints');
+        let pointsText = document.getElementById('pointsText');
+        let screen = document.getElementById('screen');
+        let screenText = document.getElementById('screenText');
+        let closeScreen = document.getElementById('closeScreen');
+        let closeText = document.getElementById('closeText');
+
+
+        freePoints.onclick = () => {
+            screen.style.opacity = '1';
+        };
+
+        closeScreen.onclick = () => {
+            screen.style.opacity = '0';
+        };
+
+
     </script>
 
 </body>
