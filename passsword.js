@@ -1,18 +1,19 @@
-const textarea = document.getElementById('passwordInput');
-
-textarea.addEventListener('keydown', (e) => {
-  if (e.key === 13) {
-    e.preventDefault();
-  }
-});
-
 function checkPassword() {
-  const password = document.getElementById('passwordInput').value;
-  const passwords = ['gockelhahn', 'yaraxtendo', 'bulachi'];
+  var password = document.getElementById("password").value;
 
-  if (passwords.includes(password)) {
-    window.location.href = 'success.html';
+  // Define passwords and their corresponding HTML files
+  var passwords = {
+    "gockelhahn": "gockelhahn.html",
+    "yaraxtendo": "yaraxtendo.html",
+    "bulachi": "bulachi.html"
+  };
+
+  // Check if the entered password exists in the passwords object
+  if (passwords.hasOwnProperty(password)) {
+    // If the password is correct, open the corresponding HTML file
+    window.location.href = passwords[password];
   } else {
-    document.getElementById('message').textContent = 'try again bro';
+    // If the password is incorrect, display an error message
+    document.getElementById("wrongPassword").style.display = "block";
   }
 }
