@@ -61,17 +61,17 @@ body {
 }
 
 .Bb {
+  pointer-events: none;
   user-select: none;
   cursor: default;
-} 
-  
+}
+
 .button .Bb {
   opacity: 0;
   transition: opacity 0.5s;
 }
 
 .button:hover .Bb {
-  color: #ffffff;
   opacity: 1;
 }
 
@@ -86,7 +86,6 @@ body {
   position: absolute;
   text-size-adjust: auto;
   text-align: center;
-  -webkit-user-drag: none;
 }
 
 .score {
@@ -138,6 +137,7 @@ h1, h2, h3, h4, h5, h6, a {
 
 .yti:hover, .ghubi:hover, .igi:hover, .gunsi:hover, .score {
   transform: scale(1.3);
+  rotate: -4deg;
   transition: 0.3s ease;
   -webkit-user-drag: none;
 }
@@ -151,16 +151,17 @@ h1, h2, h3, h4, h5, h6, a {
 .Name:active {
   transform: scale(0.9);
 }
+
 .yt, .ghub, .guns, .ig {
   -webkit-user-drag: none;
 }
 
 .freePoints {
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
   position: absolute;
-  background-color: blueviolet;
+  background-color: rgb(138, 43, 226);
   margin-top: 42.5%;
   margin-left: 1.3%;
   text-size-adjust: auto;
@@ -170,8 +171,7 @@ h1, h2, h3, h4, h5, h6, a {
 }
 
 .pointsText {
-  transform: translateY(-50%);
-  font-size: x-small;
+  font-size: small;
   user-select: none;
   text-wrap: balance;
 }
@@ -189,15 +189,17 @@ h1, h2, h3, h4, h5, h6, a {
 }
 
 .screenText {
-  transform: translateY(100px);
+  text-decoration: underline;
 }
 
 .closeScreen {
+  align-items: center;
   background-color: rgb(19, 19, 19);
   width: 25%;
   height: 50px;
   margin-top: 40%;
   margin-left: 35%;
+  border: 2px solid rgb(19, 19, 19);
 }
 
 .freePoints:active {
@@ -205,12 +207,33 @@ h1, h2, h3, h4, h5, h6, a {
 }
 
 .closeText {
-  transform: translateY(10px);
+  transform: translateY(-35%);
 }
 
 .closeScreen:active {
   transform: scale(0.9);
 }
+
+.closeScreen:hover {
+  transition: 0.5s;
+  border: 2px solid rgb(138, 43, 226);
+}
+
+.closeScreen:not(:hover) {
+  transition: 0.5s;
+  border: 2px solid rgb(19, 19, 19);
+}
+
+.closeScreen:hover .closeText {
+  transition: 0.5s;
+  color: rgb(150, 50, 250);
+}
+
+.closeScreen:not(:hover) .closeText {
+  transition: 0.5s;
+  color:rgb(255, 255, 255);
+}
+
 
 .myInput, .inputEthereum {
   position: absolute;
@@ -228,7 +251,7 @@ h1, h2, h3, h4, h5, h6, a {
 
 .bitcoinIMG {
   width: 36px;
-  rotate: -45deg;
+  rotate: -15deg;
   position: absolute;
   margin-top: -10001px;
   margin-left: 6px;
@@ -241,7 +264,15 @@ h1, h2, h3, h4, h5, h6, a {
   margin-left: 54px;
 }
 
-.bitcoinIMG:hover, .ethIMG:hover {
+.ethIMG:hover {
+  rotate: -4deg;
+  transform: scale(1.3);
+  transition: 0.3s ease;
+  -webkit-user-drag: none;
+}
+
+.bitcoinIMG:hover {
+  rotate: -19deg;
   transform: scale(1.3);
   transition: 0.3s ease;
   -webkit-user-drag: none;
@@ -270,9 +301,36 @@ h1, h2, h3, h4, h5, h6, a {
   text-align: center;
   color: white;
   position: absolute;
-  margin-left: 198px;
+  margin-left: 197px;
   margin-top: 1px;
   font-weight: bold;
   opacity: 0;
   transition: 0.3s ease;
+}
+
+.Date1, .Date2, .Date3, .Date4 {
+  position: absolute;
+  margin-left: 80%;
+}
+
+.Change1, .Change2, .Change3, .Change4 {
+  position: absolute;
+  margin-left: 50px;
+  color: white;
+}
+
+.Change1, .Date1 {
+  margin-top: 20px;
+}
+
+.Change2, .Date2 {
+  margin-top: 75px;
+}
+
+.Change3, .Date3 {
+  margin-top: 130px;
+}
+
+.Change4, .Date4 {
+  margin-top: 185px;
 }
