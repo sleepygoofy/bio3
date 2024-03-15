@@ -225,6 +225,7 @@ h1, h2, h3, h4, h5, h6, a {
 }
 
 .closeScreen:hover .closeText {
+  transform: sclale(0.9);
   transition: 0.5s;
   color: rgb(150, 50, 250);
 }
