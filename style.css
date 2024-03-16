@@ -188,6 +188,7 @@ h1, h2, h3, h4, h5, h6, a {
   height: 50px;
   margin-top: 40%;
   margin-left: 35%;
+  border-radius: 7px;
 }
 
 .freePoints:active {
