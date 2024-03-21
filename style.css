@@ -204,7 +204,7 @@ h1, h2, h3, h4, h5, h6, a {
 }
 
 .closeScreen:hover {
-  transform: scale(0.9);
+  transform: scale(0.98);
   transition: 0.5s;
   border: 2px solid rgb(138, 43, 226);
 
