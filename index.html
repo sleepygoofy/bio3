@@ -19,7 +19,6 @@
     
 <body>
     <script src="index.js"></script>
-    <script src="points.js"></script>
 
     <div class="Main">
 
@@ -39,22 +38,27 @@
         <div class="Links">
             <a class="yt" href="https://www.youtube.com/channel/UCS_LSx5Ccj9ti2EmrZ0OXVg" target="_blank">
                 <img class="yti" src="https://github.com/zyqunix/zyqunix/blob/main/white_youtube.png?raw=true" width="36">
-                <div class="YTb">YouTube</div>
+                <div class="YTb" id="YTb">YouTube</div>
             </a>
 
             <a class="ghub" href="https://www.github.com/zyqunix" target="_blank">
                 <img class="ghubi" src="https://github.com/zyqunix/zyqunix/blob/main/white_github.png?raw=true" width="36">
-                <div class="GHb">GitHub</div>
+                <div class="GHb" id="GHb">GitHub</div>
             </a>
 
             <a class="guns" href="https://guns.lol/zyqunix" target="_blank">
                 <img class="gunsi" src="https://github.com/zyqunix/zyqunix/blob/main/white_guns.png?raw=true" width="36">
-                <div class="GLb">guns.lol</div>
+                <div class="GLb" id="GLb">guns.lol</div>
             </a>
 
             <a class="ig" href="https://www.instagram.com/zyqunix" target="_blank">
                 <img class="igi" src="https://github.com/zyqunix/zyqunix/blob/main/white_instagram.png?raw=true" width="36">
-                <div class="IGb">Instagram</div>
+                <div class="IGb" id="IGb">Instagram</div>
+            </a>
+
+            <a class="x" href="https://twitter.com/real_zyqunix" target="_blank">
+                <img class="xi" src="https://github.com/zyqunix/zyqunix/blob/main/twitter.png?raw=true" width="36">
+                <div class="xb" id="xb">Twitter</div>
             </a>
 
             <input class="myInput" id="myInput" type="text" value="bc1qstlxvpqhalgrmwzj493tajrx24dv6p6utfjksy">
@@ -88,12 +92,14 @@
         <h1 class="screenText">Changelog</h1>
         <h3 class="Change1">- Added Changelog</h3>
         <h3 class="Change2">- Crypto Links</h3>
-        <h3 class="Change3">- Overhaul & Counter</h3>
+        <h3 class="Change3">- Twitter Link</h3>
         <h3 class="Change4">- More Animations</h3>
+
+        <h6 class="tip">(not chronological)</h6>
 
         <h3 class="Date1">13/03/2024</h3>
         <h3 class="Date2">12/03/2024</h3>
-        <h3 class="Date3">22/01/2024</h3>
+        <h3 class="Date3">24/03/2024</h3>
         <h3 class="Date4">14/03/2024</h3>
         <div class="closeScreen" id="closeScreen">
             <h2 class="closeText" id="closeText">Close</h2>
@@ -106,30 +112,86 @@
         ///////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////////////////////////
 
-        document.querySelector('.bitcoinIMG').addEventListener('mouseover', function() {
+
+        document.querySelector('.bitcoin').addEventListener('mouseover', function() {
             setTimeout(function() {
                 document.querySelector('.BTb').style.opacity = 1;
-            }, 250);
+            });
         });
 
-        document.querySelector('.bitcoinIMG').addEventListener('mouseout', function() {
+        document.querySelector('.bitcoin').addEventListener('mouseout', function() {
             setTimeout(function() {
                 document.querySelector('.BTb').style.opacity = 0;
             });
         });
 
 
-        document.querySelector('.ethIMG').addEventListener('mouseover', function() {
+        document.querySelector('.Ethereum').addEventListener('mouseover', function() {
             setTimeout(function() {
                 document.querySelector('.ETb').style.opacity = 1;
-            }, 250);
+            });
         });
 
-        document.querySelector('.ethIMG').addEventListener('mouseout', function() {
+        document.querySelector('.Ethereum').addEventListener('mouseout', function() {
             setTimeout(function() {
                 document.querySelector('.ETb').style.opacity = 0;
             });
         });
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////
+        /*
+        .YTb, .GHb, .GLb ,.IGb
+        */
+
+        const YTb = document.getElementById('YTb')
+        const GHb = document.getElementById('GHb')
+        const GLb = document.getElementById('GLb')
+        const IGb = document.getElementById('IGb')
+
+
+        // YT
+        YTb.addEventListener('mouseover', function() {
+            this.style.zIndex += 1;
+        });
+
+        YTb.addEventListener('mouseout', function() {
+            this.style.zIndex -= 1;
+        });
+
+
+        // GHb
+        GHb.addEventListener('mouseover', function() {
+            this.style.zIndex += 1;
+        });
+
+        GHb.addEventListener('mouseout', function() {
+            this.style.zIndex -= 1;
+        });
+
+
+        // GLb
+        GLb.addEventListener('mouseover', function() {
+            this.style.zIndex += 1;
+        });
+
+        GLb.addEventListener('mouseout', function() {
+            this.style.zIndex -= 1;
+        });
+
+
+        // IGb
+        IGb.addEventListener('mouseover', function() {
+            this.style.zIndex += 1;
+        });
+
+        IGb.addEventListener('mouseout', function() {
+            this.style.zIndex -= 1;
+        });
+
+
+
 
 
         ///////////////////////////////////////////////////////////////////////////////////////
@@ -175,7 +237,6 @@
                 counter++;
                 updateCounterDisplay();
                 hotkeyEnabled = true;
-                console.log("Clicked!")
             }
 
             if (counter > 9999 && buttonEnabled) {

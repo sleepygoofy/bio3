@@ -25,13 +25,13 @@ body {
 .ghub {
   margin-left: 1px;
 }
-.yt, .ghub, .guns, .ig, .desc {
+.yt, .ghub, .guns, .ig, .x, .desc {
   user-select: none;
   position: relative;
   display: inline-block;
 }
 
-.YTb, .GHb, .GLb ,.IGb {
+.YTb, .GHb, .GLb, .IGb, .xb {
   font-weight: bold;
   position: absolute;
   top: 40px;
@@ -43,7 +43,7 @@ body {
   user-select: none;
 }
 
-.yt:hover .YTb, .ghub:hover .GHb, .guns:hover .GLb, .ig:hover .IGb, .desc:hover .descB {
+.yt:hover .YTb, .ghub:hover .GHb, .guns:hover .GLb, .ig:hover .IGb, .x:hover .xb, .desc:hover .descB {
   transition-delay: 250ms;
   opacity: 1;
 }
@@ -92,6 +92,7 @@ body {
 }
 
 .Links {
+  width: 100%;
   user-select: none;
 }
 
@@ -123,14 +124,14 @@ h1, h2, h3, h4, h5, h6, a {
   transition: 0.2s ease;
 }
 
-.yti:hover, .ghubi:hover, .igi:hover, .gunsi:hover, .score {
+.yti:hover, .ghubi:hover, .gunsi:hover, .igi:hover, .xi:hover, .score {
   transform: scale(1.3);
   rotate: -4deg;
   transition: 0.3s ease;
   -webkit-user-drag: none;
 }
 
-.yti:not(:hover), .ghubi:not(:hover),.igi:not(:hover), .gunsi:not(:hover), .button:not(:hover), .score {
+.yti:not(:hover), .ghubi:not(:hover), .gunsi:not(:hover), .xi:not(:hover), .igi:not(:hover), .button:not(:hover), .score {
   transform: scale(1);
   transition: 0.3s;
   -webkit-user-drag: none;
@@ -227,8 +228,10 @@ h1, h2, h3, h4, h5, h6, a {
 
 .myInput, .inputEthereum {
   position: absolute;
-  margin-top: 10000px;
-
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
+  size: 100%;
 }
 
 .bitcoin, .Ethereum {
@@ -279,7 +282,7 @@ h1, h2, h3, h4, h5, h6, a {
   text-align: center;
   color: white;
   position: absolute;
-  margin-left: 150px;
+  margin-left: 195px;
   margin-top: 1px;
   font-weight: bold;
   opacity: 0;
@@ -291,7 +294,7 @@ h1, h2, h3, h4, h5, h6, a {
   text-align: center;
   color: white;
   position: absolute;
-  margin-left: 197px;
+  margin-left: 240px;
   margin-top: 1px;
   font-weight: bold;
   opacity: 0;
@@ -323,4 +326,11 @@ h1, h2, h3, h4, h5, h6, a {
 
 .Change4, .Date4 {
   margin-top: 185px;
+}
+
+.tip {
+  position: absolute;
+  margin-top: 40%;
+  margin-left: 80%;
+  font-size: x-small;
 }
