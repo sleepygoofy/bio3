@@ -101,8 +101,25 @@
         <h3 class="Date2">12/03/2024</h3>
         <h3 class="Date3">24/03/2024</h3>
         <h3 class="Date4">14/03/2024</h3>
+
         <div class="closeScreen" id="closeScreen">
             <h2 class="closeText" id="closeText">Close</h2>
+        </div>
+
+        <div class="notesButton" id="notesButton">
+            <h2 class="notesText" id="notesText">Notes</h2>
+        </div>
+    </div>
+
+    <div class="notes" id="notes">
+        <h1 class="topText">Notes</h1>
+        <h3 class="Note1">- WORK IN PROGRESS</h3>
+        <h3 class="Note2">- WORK IN PROGRESS</h3>
+        <h3 class="Note3">- WORK IN PROGRESS</h3>
+        <h3 class="Note4">- WORK IN PROGRESS</h3>
+
+        <div class="closeNotes" id="closeNotes">
+            <h2 class="notesText" id="notesText">Close</h2>
         </div>
     </div>
     
@@ -263,6 +280,9 @@
         let screenText = document.getElementById('screenText');
         let closeScreen = document.getElementById('closeScreen');
         let closeText = document.getElementById('closeText');
+        let closeNotes = document.getElementById('closeNotes');
+        let notes = document.getElementById('notes');
+        let notesButton = document.getElementById('notesButton');
 
 
         freePoints.onclick = () => {
@@ -270,10 +290,23 @@
             screen.style.transitionDuration = '0.3s';
         };
 
+
+        closeNotes.onclick = () => {
+            notes.style.opacity = '0';
+            notes.style.transitionDuration = '0.3s';
+        };
+
+        notesButton.onclick = () => {
+            notes.style.opacity = '1';
+            screen.style.opacity = '0';
+        };
+
+
         closeScreen.onclick = () => {
             screen.style.opacity = '0';
             screen.style.transitionDuration = '0.3s';
         };
+
 
     </script>
 
