@@ -30,7 +30,6 @@ body {
 }
 
 .yt:hover .YTb, .ghub:hover .GHb, .guns:hover .GLb, .ig:hover .IGb, .x:hover .xb, .desc:hover .descB {
-  transition-delay: 250ms;
   opacity: 1;
 }
 
@@ -72,7 +71,7 @@ body {
 
 .Main {
   margin-top: 295px;
-  margin-left: 9%;
+  margin-left: 12.5%;
   position: absolute;
   width: 500px;
 }
