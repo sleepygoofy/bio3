@@ -63,14 +63,14 @@
 
             <input class="myInput" id="myInput" type="text" value="bc1qstlxvpqhalgrmwzj493tajrx24dv6p6utfjksy">
             <button id="bitcoin" class="bitcoin" onclick="copyCoin()">
-                <img class="bitcoinIMG" src="bitcoin123-removebg.png">
+                <img class="bitcoinIMG" src="icons/bitcoin123-removebg.png">
             </button>
 
             <div id="BTb" class="BTb" style="color: white;">Copy Address</div>
 
             <input class="inputEthereum" id="inputEthereum" type="text" value="0x1E6D96999da353981D7863EbB3633b5DEd5e2949">
             <button id="Ethereum" class="Ethereum" onclick="copyCoin()">
-                <img class="ethIMG" src="ethereum.png" width="36">
+                <img class="ethIMG" src="icons/ethereum.png" width="36">
             </button>
 
             <div id="ETb" class="ETb" style="color: white;">Copy Address</div>
@@ -90,7 +90,7 @@
 
     <div class="screen" id="screen">
         <h1 class="screenText">Changelog</h1>
-        <h3 class="Change1">- Added Changelog</h3>
+        <h3 class="Change1">- Music</h3>
         <h3 class="Change2">- Crypto Links</h3>
         <h3 class="Change3">- Twitter Link</h3>
         <h3 class="Change4">- More Animations</h3>
@@ -113,17 +113,62 @@
 
     <div class="notes" id="notes">
         <h1 class="topText">Notes</h1>
-        <h3 class="Note1">- WORK IN PROGRESS</h3>
-        <h3 class="Note2">- WORK IN PROGRESS</h3>
-        <h3 class="Note3">- WORK IN PROGRESS</h3>
+        <h3 class="Note1">- song: smokedope2016 - IM NOT GOD BUT I WISH I WAS ft. Joeyy</h3>
+        <h3 class="Note2">- the button is still messed up</h3>
+        <h3 class="Note3">- all buttons are messed up for some reason lmao</h3>
         <h3 class="Note4">- WORK IN PROGRESS</h3>
 
         <div class="closeNotes" id="closeNotes">
             <h2 class="notesText" id="notesText">Close</h2>
         </div>
     </div>
-    
+
+    <div class="mute" id="mute">
+        <svg class="playing" id="playing" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 48 48"><defs><mask id="ipTVolumeNotice0">
+            <g fill="none" stroke="#fff" stroke-width="4">
+                <path fill="#555" stroke-linejoin="round" d="M24 6v36c-7 0-12.201-9.16-12.201-9.16H6a2 2 0 0 1-2-2V17.01a2 2 0 0 1 2-2h5.799S17 6 24 6Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M32 15a11.91 11.91 0 0 1 1.684 1.859A12.07 12.07 0 0 1 36 24c0 2.654-.846 5.107-2.278 7.09A11.936 11.936 0 0 1 32 33"></path><path stroke-linecap="round" d="M34.236 41.186C40.084 37.696 44 31.305 44 24c0-7.192-3.796-13.496-9.493-17.02"></path>
+            </g>
+            </mask>
+            </defs>
+            <path fill="currentColor" d="M0 0h48v48H0z" mask="url(#ipTVolumeNotice0)"></path>
+        </svg>
+
+        <svg class="muted" id="muted" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 48 48"><defs><mask id="ipTVolumeMute0"><mask id="ipTVolumeMute1" width="13" height="13" x="30" y="18" maskUnits="userSpaceOnUse" style="mask-type: alpha;"><path d="M30 18h13v13H30z"></path></mask><g fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="4"><g stroke-linecap="round" mask="url(#ipTVolumeMute1)"><path d="m40.735 20.286l-8.486 8.485m.001-8.485l8.485 8.485"></path></g>
+            <path fill="#555" d="M24 6v36c-7 0-12.201-9.16-12.201-9.16H6a2 2 0 0 1-2-2V17.01a2 2 0 0 1 2-2h5.799S17 6 24 6Z"></path></g></mask></defs><path fill="currentColor" d="M0 0h48v48H0z" mask="url(#ipTVolumeMute0)"></path>
+        </svg>
+            
+        
+    </div>
+
+    <iframe class="iframe" src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+
+    <audio autoplay loop class="music" id="music">
+        <source src="https://easyfiles.cc/2024/4/b3540f8c-3edf-4cb0-b048-0cba75a6ae69/SMOKEDOPE2016_-_IM_NOT_GOD_BUT_I_WISH_I_WAS_ft._JOEYY_prod._SIKA_-_SMOKEDOPE2016.mp3">
+    </audio>
+
     <script>
+
+        let muteButton = document.getElementById('mute')
+        let muteIcon = document.getElementById('muted')
+        let unmuteIcon = document.getElementById('playing')
+        let music = document.getElementById('music')
+        let count = 2;
+
+        music.volume = '0.25';
+
+        muteButton.onclick = () => {
+            count += 1;
+            
+            if (count % 2) {
+                muteIcon.style.opacity = '1';
+                unmuteIcon.style.opacity = '0';
+                music.muted = true;
+            } else {    
+                muteIcon.style.opacity = '0';
+                unmuteIcon.style.opacity = '1';
+                music.muted = false;
+            }; 
+        };
 
 
         ///////////////////////////////////////////////////////////////////////////////////////

@@ -2,24 +2,10 @@ body {
   overflow: hidden;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(https://freshcredit.com/wp-content/uploads/2022/01/Brand-Background-Elements-8.gif);
-  background-position-x: center !important;
+  background-position-x: center;
   background-position-y: -90px;
   background-size: 105%;
   -webkit-user-drag: none;
-
-  animation: fadeInAnimation ease 2s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-
-  @keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-  }
 }
 
 .ghub {
@@ -102,6 +88,7 @@ body {
   margin-left: 10px;
   margin-top: 10px;
   user-select: none;
+  text-shadow: rgba(255, 255, 255, 0.25) 0px 0px 7px, rgba(255, 255, 255, 0.25) 0px 0px 5px;
 }
 
 h1, h2, h3, h4, h5, h6, a {
@@ -179,6 +166,7 @@ h1, h2, h3, h4, h5, h6, a {
 }
 
 .notes {
+  overflow-wrap: break-word;
   border-radius: 10px;
   user-select: none;
   opacity: 0;
@@ -189,6 +177,11 @@ h1, h2, h3, h4, h5, h6, a {
   position: absolute;
   margin-left: 500px;
   margin-top: 150px;
+}
+
+.Note1, .Note2, .Note3, .Note4 {
+  margin-left: 25px !important;
+  position: absolute;
 }
 
 .screenText {
@@ -215,7 +208,7 @@ h1, h2, h3, h4, h5, h6, a {
   background-color: rgb(19, 19, 19);
   width: 25%;
   height: 50px;
-  margin-top: 13.75%;
+  margin-top: 37.5%;
   margin-left: 35%;
   border-radius: 7px;
   position: absolute;
@@ -383,19 +376,19 @@ h1, h2, h3, h4, h5, h6, a {
   color: white;
 }
 
-.Change1, .Date1 {
+.Change1, .Date1, .Note1 {
   margin-top: 20px;
 }
 
-.Change2, .Date2 {
+.Change2, .Date2, .Note2  {
   margin-top: 75px;
 }
 
-.Change3, .Date3 {
+.Change3, .Date3, .Note3  {
   margin-top: 130px;
 }
 
-.Change4, .Date4 {
+.Change4, .Date4, .Note4  {
   margin-top: 185px;
 }
 
@@ -404,4 +397,41 @@ h1, h2, h3, h4, h5, h6, a {
   margin-top: 40%;
   margin-left: 80%;
   font-size: x-small;
+}
+
+.mute {
+  cursor: pointer;
+  width: 55px;
+  height: 55px;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 10px;
+  background-color: rgb(100,100,100);
+  opacity: 0.9;
+  transition-duration: 0.1s;
+  border: 2px solid rgb(115, 115, 115);
+  border-radius: 1em;
+  user-select: none;
+  z-index: 1;
+}
+
+.playing, .muted {
+  z-index: 2;
+  position: absolute;
+  margin-top: 20%;
+  margin-left: 22.5%;
+}
+
+.muted {
+  opacity: 0;
+}
+
+.mute:active {
+  transform: translateY(4px);
+  transition-duration: 0.075s;
+}
+
+.iframe {
+  position: absolute;
+  opacity: 0;
 }
