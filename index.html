@@ -46,7 +46,7 @@
                 <div class="GHb" id="GHb">GitHub</div>
             </a>
 
-            <a class="guns" href="https://guns.lol/zyqunix" target="_blank">
+            <a class="guns" href="https://zaza.bio/zyqunix" target="_blank">
                 <img class="gunsi" src="icons/white_guns.png" width="36">
                 <div class="GLb" id="GLb">guns.lol</div>
             </a>
@@ -74,6 +74,13 @@
             </button>
 
             <div id="ETb" class="ETb" style="color: white;">Copy Address</div>
+
+            <input class="inputLitecoin" id="inputLitecoin" type="text" value="LbTYSdu6ARAhEPnpnkScxwn5vfVM2P8KgT">
+            <button id="Litecoin" class="Litecoin" onclick="copyCoin()">
+                <img class="ltIMG" src="icons/litecoin.jpg" width="36">
+            </button>
+
+            <div id="LTb" class="LTb" style="color: white;">Copy Address</div>
 
         </div>
     </div>
@@ -118,11 +125,17 @@
     </div>
 
     <div class="notes" id="notes">
+
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+        <div class="dot3"></div>
+        <div class="dot4"></div>
+
         <h1 class="topText">Notes</h1>
-        <h3 class="Note1">- song: smokedope2016 - IM NOT GOD BUT I WISH I WAS ft. Joeyy</h3>
-        <h3 class="Note2">- the button is still messed up</h3>
-        <h3 class="Note3">- i fixed them :P</h3>
-        <h3 class="Note4">- ETH is broken, hover a bit more to the left</h3>
+        <h3 class="Note1"> song: smokedope2016 - IM NOT GOD BUT I WISH I WAS ft. Joeyy</h3>
+        <h3 class="Note2"> the button is still messed up</h3>
+        <h3 class="Note3"> i fixed them :P</h3>
+        <h3 class="Note4"> ETH is broken, hover a bit more to the left</h3>
 
         <div class="closeNotes" id="closeNotes">
             <h2 class="notesText" id="notesText">Close</h2>
@@ -301,14 +314,13 @@
 
         document.getElementById('button').onclick = () => {
             Bb.style.opacity = '0';
-            if (counter < 9999) {
+            if (counter < 9998) {
                 counter++;
                 updateCounterDisplay();
                 hotkeyEnabled = true;
             }
 
-            if (counter > 9999 && buttonEnabled) {
-                doubleCounter(); 
+            if (counter > 9998 && buttonEnabled) {
                 counter = 0; 
                 hotkeyEnabled = false; 
             }
@@ -350,6 +362,7 @@
         notesButton.onclick = () => {
             notes.style.opacity = '1';
             screen.style.opacity = '0';
+            screen.style.transitionDuration = '0ms';
         };
 
 
