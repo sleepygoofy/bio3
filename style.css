@@ -8,8 +8,20 @@ body {
   -webkit-user-drag: none;
 }
 
+.Links {
+  align-content: center;
+}
+
 .ghub {
-  margin-left: 1px;
+  margin-left: 2.5px;
+}
+
+.ig {
+  margin-left: 5px;
+}
+
+.guns {
+  margin-left: 2px;
 }
 
 .yt, .ghub, .guns, .ig, .x, .desc {
@@ -18,20 +30,15 @@ body {
   display: inline-block;
 }
 
-.YTb, .GHb, .GLb, .IGb, .xb {
-  font-weight: bold;
-  position: absolute;
-  top: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.3s ease-in;
-  pointer-events: none; 
-  user-select: none;
+.yt:hover .tooltip, .ghub:hover .tooltip, .guns:hover .tooltip, .ig:hover .tooltip, .x:hover .tooltip, .desc:hover .descB {
+  opacity: 1;
+  transition: 0.3s;
+  transition-delay: 0.1s;
 }
 
-.yt:hover .YTb, .ghub:hover .GHb, .guns:hover .GLb, .ig:hover .IGb, .x:hover .xb, .desc:hover .descB {
-  opacity: 1;
+.yt:not(:hover) .tooltip, .ghub:not(:hover) .tooltip, .guns:not(:hover) .tooltip, .ig:not(:hover) .tooltip, .x:not(:hover) .tooltip, .desc:hover .descB {
+  opacity: 0;
+  transition: 0.3s;
 }
 
 .Bb {
@@ -78,17 +85,17 @@ body {
 }
 
 .Links {
-  width: 100%;
+  width: 40%;
   user-select: none;
 }
 
 .Name {
   color: rgb(255, 255, 255);
-  position:absolute;
+  position: absolute;
   margin-left: 10px;
   margin-top: 10px;
   user-select: none;
-  text-shadow: rgba(255, 255, 255, 0.25) 0px 0px 7px, rgba(255, 255, 255, 0.25) 0px 0px 5px;
+  text-shadow: rgba(255, 255, 255, 0.25) 0px 0px 2px, rgba(255, 255, 255, 0.25) 0px 0px 2px;
 }
 
 h1, h2, h3, h4, h5, h6, a {
@@ -164,7 +171,7 @@ h1, h2, h3, h4, h5, h6, a {
 }
 
 .screen {
-  border-radius: 10px;
+  border-radius: 1em;
   user-select: none;
   opacity: 0;
   background-color: rgb(30, 30, 30);
@@ -176,9 +183,13 @@ h1, h2, h3, h4, h5, h6, a {
   margin-top: 150px;
 }
 
+.ethIMG:hover .screen .notes {
+  z-index: -1;
+}
+
 .notes {
   overflow-wrap: break-word;
-  border-radius: 10px;
+  border-radius: 1em;
   user-select: none;
   opacity: 0;
   background-color: rgb(30, 30, 30);
@@ -210,7 +221,7 @@ h1, h2, h3, h4, h5, h6, a {
   height: 50px;
   margin-top: 37%;
   margin-left: 35%;
-  border-radius: 7px;
+  border-radius: 1em;
   position: absolute;
 }
 
@@ -222,7 +233,7 @@ h1, h2, h3, h4, h5, h6, a {
   height: 50px;
   margin-top: 37%;
   margin-left: 5%;
-  border-radius: 7px;
+  border-radius: 1em;
   position: absolute;
   z-index: 2;
 }
@@ -265,26 +276,6 @@ h1, h2, h3, h4, h5, h6, a {
   z-index: 1;
 }
 
-.closeScreen:hover .closeText {
-  transition: 0.5s;
-  color: rgb(150, 50, 250);
-}
-
-.notesButton:hover .notesText {
-  transition: 0.5s;
-  color: rgb(150, 50, 250);
-}
-
-.closeScreen:not(:hover) .closeText {
-  transition: 0.5s;
-  color:rgb(255, 255, 255);
-}
-
-.notesButton:not(:hover) .notesText {
-  transition: 0.5s;
-  color:rgb(255, 255, 255);
-}
-
 .myInput, .inputEthereum, .inputLitecoin {
   position: absolute;
   opacity: 0;
@@ -299,6 +290,16 @@ h1, h2, h3, h4, h5, h6, a {
   height: 0px;
   margin-top: 10000px;
   cursor: pointer;
+}
+
+.bitcoin:hover .tooltip, .Ethereum:hover .tooltip, .Litecoin:hover .tooltip {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.bitcoin:not(:hover) .tooltip, .Ethereum:not(:hover) .tooltip, .Litecoin:not(:hover) .tooltip {
+  opacity: 0;
+  transition: 0.5s;
 }
 
 .bitcoinIMG {
@@ -324,7 +325,7 @@ h1, h2, h3, h4, h5, h6, a {
 }
 
 .ethIMG:hover {
-  rotate: -4deg;
+  rotate: -15deg;
   transform: scale(1.3);
   transition: 0.3s ease;
   -webkit-user-drag: none;
@@ -344,8 +345,15 @@ h1, h2, h3, h4, h5, h6, a {
   -webkit-user-drag: none;
 }
 
-.bitcoinIMG:not(:hover), .ethIMG:not(:hover, .ltIMG:not(:hover)) {
+.ltIMG:not(:hover) {
   transform: scale(1);
+  transition: 0.3s ease;
+  -webkit-user-drag: none;
+}
+
+.bitcoinIMG:not(:hover), .ethIMG:not(:hover), .ltIMG:not(:hover) {
+  transform: scale(1);
+  transition-delay: 0.2s;
   transition: 0.3s ease;
   -webkit-user-drag: none;
 }
@@ -430,7 +438,7 @@ h1, h2, h3, h4, h5, h6, a {
 .tip {
   position: absolute;
   margin-top: 40%;
-  margin-left: 67.5%;
+  margin-left: 75%;
   font-size: small;
 }
 
@@ -485,4 +493,25 @@ h1, h2, h3, h4, h5, h6, a {
 
 .dot4 {
   margin-top: 275px;
+}
+
+.bitcoin > .tooltip {
+  user-select: none;
+  color: white;
+  margin-top: -9955px;
+  margin-left: -20px;
+}
+
+.Ethereum > .tooltip {
+  user-select: none;
+  color: white;
+  margin-top: -9955px;
+  margin-left: 25px;
+}
+
+.Litecoin > .tooltip {
+  user-select: none;
+  color: white;
+  margin-top: -9955px;
+  margin-left: 70px;
 }

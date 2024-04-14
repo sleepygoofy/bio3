@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/zyqunix/zyqunix/main/logo2131232.ico">
+    <link rel="shortcut icon" href="icons/logo2131232.ico">
     <link rel="stylesheet" href="style.css">
     <title>zy's page</title>
 </head>    
@@ -15,6 +15,7 @@
     </script>
     
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="testing.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
 <body>
@@ -38,49 +39,65 @@
         <div class="Links">
             <a class="yt" href="https://www.youtube.com/channel/UCS_LSx5Ccj9ti2EmrZ0OXVg" target="_blank">
                 <img class="yti" src="icons/white_youtube.png" width="36">
-                <div class="YTb" id="YTb">YouTube</div>
+                <div class="tooltip" id="tooltip">
+                    <div class="tooltipText">YouTube</div>
+                </div>
             </a>
 
             <a class="ghub" href="https://www.github.com/zyqunix" target="_blank">
                 <img class="ghubi" src="icons/white_github.png" width="36">
-                <div class="GHb" id="GHb">GitHub</div>
+                <div class="tooltip" id="tooltip">
+                    <div class="tooltipText">GitHub</div>
+                </div>
             </a>
 
             <a class="guns" href="https://zaza.bio/zyqunix" target="_blank">
                 <img class="gunsi" src="icons/white_guns.png" width="36">
-                <div class="GLb" id="GLb">guns.lol</div>
+                <div class="tooltip" id="tooltip">
+                    <div class="tooltipText">guns.lol</div>
+                </div>
             </a>
 
             <a class="ig" href="https://www.instagram.com/zyqunix" target="_blank">
                 <img class="igi" src="icons/white_instagram.png" width="36">
-                <div class="IGb" id="IGb">Instagram</div>
+                <div class="tooltip" id="tooltip">
+                    <div class="tooltipText">Instagram</div>
+                </div>
             </a>
 
             <a class="x" href="https://twitter.com/real_zyqunix" target="_blank">
                 <img class="xi" src="icons/twitter.png" width="36">
-                <div class="xb" id="xb">Twitter</div>
+                <div class="tooltip" id="tooltip">
+                    <div class="tooltipText">Twitter</div>
+                </div>
             </a>
 
             <input class="myInput" id="myInput" type="text" value="bc1qstlxvpqhalgrmwzj493tajrx24dv6p6utfjksy">
             <button id="bitcoin" class="bitcoin" onclick="copyCoin()">
                 <img class="bitcoinIMG" src="icons/bitcoin123-removebg.png">
-            </button>
 
-            <div id="BTb" class="BTb" style="color: white;">Copy Address</div>
+                <div class="tooltip" id="tooltip">
+                    <div class="tooltipText">Copy Address</div>
+                </div>
+            </button>
 
             <input class="inputEthereum" id="inputEthereum" type="text" value="0x1E6D96999da353981D7863EbB3633b5DEd5e2949">
             <button id="Ethereum" class="Ethereum" onclick="copyCoin()">
                 <img class="ethIMG" src="icons/ethereum.png" width="36">
-            </button>
 
-            <div id="ETb" class="ETb" style="color: white;">Copy Address</div>
+                <div class="tooltip" id="tooltip">
+                    <div class="tooltipText">Copy Address</div>
+                </div>
+            </button>
 
             <input class="inputLitecoin" id="inputLitecoin" type="text" value="LbTYSdu6ARAhEPnpnkScxwn5vfVM2P8KgT">
             <button id="Litecoin" class="Litecoin" onclick="copyCoin()">
-                <img class="ltIMG" src="icons/litecoin.jpg" width="36">
-            </button>
+                <img class="ltIMG" src="icons/litecoin.png" width="36">
 
-            <div id="LTb" class="LTb" style="color: white;">Copy Address</div>
+                <div class="tooltip" id="tooltip">
+                    <div class="tooltipText">Copy Address</div>
+                </div>
+            </button>
 
         </div>
     </div>
@@ -108,7 +125,7 @@
         <h3 class="Change3"> Twitter Link</h3>
         <h3 class="Change4"> More Animations</h3>
 
-        <h6 class="tip">send bitobin or ehterum plzz</h6>
+        <h6 class="tip">send crypto plzz 🙏🙏</h6>
 
         <h3 class="Date1">12/04/2024</h3>
         <h3 class="Date2">12/03/2024</h3>
@@ -133,9 +150,9 @@
 
         <h1 class="topText">Notes</h1>
         <h3 class="Note1"> song: smokedope2016 - IM NOT GOD BUT I WISH I WAS ft. Joeyy</h3>
-        <h3 class="Note2"> the button is still messed up</h3>
+        <h3 class="Note2"> ltc is broken for a bit</h3>
         <h3 class="Note3"> i fixed them :P</h3>
-        <h3 class="Note4"> ETH is broken, hover a bit more to the left</h3>
+        <h3 class="Note4"> eth wasnt broken, had issues with z-index</h3>
 
         <div class="closeNotes" id="closeNotes">
             <h2 class="notesText" id="notesText">Close</h2>
@@ -165,7 +182,14 @@
         <source src="https://easyfiles.cc/2024/4/b3540f8c-3edf-4cb0-b048-0cba75a6ae69/SMOKEDOPE2016_-_IM_NOT_GOD_BUT_I_WISH_I_WAS_ft._JOEYY_prod._SIKA_-_SMOKEDOPE2016.mp3">
     </audio>
 
+    <div class="circle"></div>
+
     <script>
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////
+
 
         let muteButton = document.getElementById('mute')
         let muteIcon = document.getElementById('muted')
@@ -192,36 +216,6 @@
 
         ///////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////////////////////////
-
-
-        document.querySelector('.bitcoin').addEventListener('mouseover', function() {
-            setTimeout(function() {
-                document.querySelector('.BTb').style.opacity = 1;
-            });
-        });
-
-        document.querySelector('.bitcoin').addEventListener('mouseout', function() {
-            setTimeout(function() {
-                document.querySelector('.BTb').style.opacity = 0;
-            });
-        });
-
-
-        document.querySelector('.Ethereum').addEventListener('mouseover', function() {
-            setTimeout(function() {
-                document.querySelector('.ETb').style.opacity = 1;
-            });
-        });
-
-        document.querySelector('.Ethereum').addEventListener('mouseout', function() {
-            setTimeout(function() {
-                document.querySelector('.ETb').style.opacity = 0;
-            });
-        });
-
-
-        ///////////////////////////////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////////////////////////////
         /*
         .YTb, .GHb, .GLb ,.IGb
         */
@@ -232,64 +226,25 @@
         const IGb = document.getElementById('IGb')
 
 
-        // YT
-        YTb.addEventListener('mouseover', function() {
-            this.style.zIndex += 1;
-        });
-
-        YTb.addEventListener('mouseout', function() {
-            this.style.zIndex -= 1;
-        });
-
-
-        // GHb
-        GHb.addEventListener('mouseover', function() {
-            this.style.zIndex += 1;
-        });
-
-        GHb.addEventListener('mouseout', function() {
-            this.style.zIndex -= 1;
-        });
-
-
-        // GLb
-        GLb.addEventListener('mouseover', function() {
-            this.style.zIndex += 1;
-        });
-
-        GLb.addEventListener('mouseout', function() {
-            this.style.zIndex -= 1;
-        });
-
-
-        // IGb
-        IGb.addEventListener('mouseover', function() {
-            this.style.zIndex += 1;
-        });
-
-        IGb.addEventListener('mouseout', function() {
-            this.style.zIndex -= 1;
-        });
-
-
-
-
-
         ///////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////////////////////////
 
 
         function copyCoin() {
             var copyBTC = document.getElementById("myInput");
-            var copyEth = document.getElementById("inputEthereum")
+            var copyEth = document.getElementById("inputEthereum");
+            var copyLTC = document.getElementById("inputLitecoin");
 
             copyBTC.select();
             copyEth.select();
+            copyLTC.select();
             copyBTC.setSelectionRange(0, 99999); 
             copyEth.setSelectionRange(0, 9999);
+            copyLTC.setSelectionRange(0, 9999);
 
             navigator.clipboard.writeText(copyBTC.value);
             navigator.clipboard.writeText(copyEth.value);
+            navigator.clipboard.writeText(copyLTC.value);
             alert("Copied!")
         } 
 
