@@ -21,5 +21,6 @@
 }
 
 .yt > .tooltip, .ghub > .tooltip, .guns > .tooltip, .ig > .tooltip, .x > .tooltip {
+    transition-delay: 0.3s;
     transform: translate(-30%, 10%);
 }
