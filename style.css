@@ -137,10 +137,6 @@ h1, h2, h3, h4, h5, h6, a {
   -webkit-user-drag: none;
 }
 
-.Name:active {
-  transform: scale(0.9);
-}
-
 .yt, .ghub, .guns, .ig {
   -webkit-user-drag: none;
 }
@@ -231,11 +227,9 @@ h1, h2, h3, h4, h5, h6, a {
 
 .closeScreen:active, .notesButton:active {
   transition: 0.3s;
-  transform: scale(0.9);
 }
 
 .notesButton:hover, .closeScreen:hover, .closeNotes:hover {
-  transform: scale(0.98);
   transition: 0.5s;
   border: 2px solid rgb(138, 43, 226);
   z-index: 3;
@@ -533,44 +527,50 @@ h1, h2, h3, h4, h5, h6, a {
   color: white;
 }
 
-
-/*
-.pixelTest {
-  width: 25px;
-  height: 25px;
-  background-color: white;
-  position: absolute;
-  margin-top: 37.5%;
-  margin-left: 96.5%;
-  color: black;
+.notesButton:hover .notesText, .closeScreen:hover .closeText, .closeNotes:hover .notesText {
+  color: rgb(138, 43, 226);
+  transition: 0.5s;
 }
 
-.pixelTest2 {
-  width: 25px;
-  height: 25px;
-  background-color: white;
-  position: absolute;
-  margin-top: 37.5%;
-  color: black;
+.notesButton:not(:hover) .notesText, .closeScreen:not(:hover) .closeText, .closeNotes:not(:hover) .notesText {
+  color: white;
+  transition: 0.5s;
 }
 
-.pixelTest3 {
-  width: 25px;
-  height: 25px;
-  background-color: white;
+.copiedAlert {
+  width: 150px;
+  height: 50px;
+  background-color: rgb(30, 30, 30, 0.75);
+  backdrop-filter: blur(10px);
   position: absolute;
-  margin-top: 37.5%;
-  margin-left: 33%;
-  color: black;
+  margin-top: -100px;
+  margin-left: 49.5%;
+  transform: translateX(-50%);
+  user-select: none;
+  text-align: center;
+  border: 2px solid rgb(138, 43, 226);
+  border-radius: 1em;
+  transition: 0.3s;
 }
 
-.pixelTest4 {
-  width: 25px;
-  height: 25px;
-  background-color: white;
-  position: absolute;
-  margin-top: 37.5%;
-  margin-left: 65%;
-  color: black;
+.alertText {
+  margin-top: 10px;
 }
-*/
+
+.email {
+  position: absolute;
+  margin-left: 20px;
+  margin-top: 188px;
+  z-index: 2;
+}
+
+.email:hover {
+  text-decoration: underline;
+  color: rgb(138, 43, 226);
+  transition: 0.3s;
+}
+
+.email:not(:hover) {
+  color: white;
+  transition: 0.3s;
+}

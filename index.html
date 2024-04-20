@@ -26,7 +26,6 @@
         <div class="Intro" style="width: max-content;">
             <h2> 
                 <img class="avatar" src="icons/pfp.png" width="52">
-                <a href="https://zyqunix.github.io/zyqunix2/" target="_blank">
                     <u class="Name">zyqunix</u>
                 </a>
             </h2>
@@ -73,7 +72,7 @@
             </a>
 
             <input class="myInput" id="myInput" type="text" value="bc1qstlxvpqhalgrmwzj493tajrx24dv6p6utfjksy">
-            <button id="bitcoin" class="bitcoin" onclick="copyCoin()">
+            <button id="bitcoin" class="bitcoin" onclick="copyBTC()">
                 <img class="bitcoinIMG" src="icons/bitcoin123-removebg.png">
 
                 <div class="tooltip" id="tooltip">
@@ -82,7 +81,7 @@
             </button>
 
             <input class="inputEthereum" id="inputEthereum" type="text" value="0x1E6D96999da353981D7863EbB3633b5DEd5e2949">
-            <button id="Ethereum" class="Ethereum" onclick="copyCoin()">
+            <button id="Ethereum" class="Ethereum" onclick="copyEth()">
                 <img class="ethIMG" src="icons/ethereum.png" width="36">
 
                 <div class="tooltip" id="tooltip">
@@ -91,7 +90,7 @@
             </button>
 
             <input class="inputLitecoin" id="inputLitecoin" type="text" value="LbTYSdu6ARAhEPnpnkScxwn5vfVM2P8KgT">
-            <button id="Litecoin" class="Litecoin" onclick="copyCoin()">
+            <button id="Litecoin" class="Litecoin" onclick="copyLTC()">
                 <img class="ltIMG" src="icons/litecoin.png" width="36">
 
                 <div class="tooltip" id="tooltip">
@@ -121,10 +120,11 @@
 
         <h1 class="screenText">Changelog</h1>
         <h3 class="Change1"> Music & Mute Button</h3>
-        <h3 class="Change2"> Crypto Links</h3>
-        <h3 class="Change3"> Twitter Link</h3>
-        <h3 class="Change4"> More Animations</h3>
+        <h3 class="Change2"> Added Click-To-Enter</h3>
+        <h3 class="Change3"> Added a "Copied" div</h3>
+        <h3 class="Change4"> Help me scale this correctly!</h3>
 
+        <a class="email" href="mailto:zyqunix@your.mom-is.art">email</a>
         <h6 class="tip">send crypto plzz 🙏🙏</h6>
 
         <h3 class="Date1">12/04/2024</h3>
@@ -164,9 +164,9 @@
         </h4>
 
         <h3 class="Note1"> what do i put here</h3>
-        <h3 class="Note2"> lorem ipsum</h3>
-        <h3 class="Note3"> lorem ipsum</h3>
-        <h3 class="Note4"> lorem ipsum</h3>
+        <h3 class="Note2"> i made this as a project, pls dont hate</h3>
+        <h3 class="Note3"> was also supposed to be a guns.lol recreation xd</h3>
+        <h3 class="Note4"> purple, because it's pretty and looks good with black</h3>
 
         <div class="closeNotes" id="closeNotes">
             <h2 class="notesText" id="notesText">Close</h2>
@@ -200,11 +200,11 @@
         <div class="userPage_clickToEnterText__pAALW" id="userPage_clickToEnterText__pAALW" style="font-weight:700;font-size:32px">click to enter...</div>
     </div>
 
+    <div class="copiedAlert" id="copiedAlert">
+        <h2 class="alertText">Copied!</h2>
+    </div>
+
     <script>
-
-        
-
-
 
         ///////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////////////////////////
@@ -243,40 +243,63 @@
             }; 
         };
 
-
-        ///////////////////////////////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////////////////////////////
-        /*
-        .YTb, .GHb, .GLb ,.IGb
-        */
-
-        const YTb = document.getElementById('YTb')
-        const GHb = document.getElementById('GHb')
-        const GLb = document.getElementById('GLb')
-        const IGb = document.getElementById('IGb')
-
-
         ///////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////////////////////////
 
 
-        function copyCoin() {
+        function copyBTC() {
             var copyBTC = document.getElementById("myInput");
-            var copyEth = document.getElementById("inputEthereum");
-            var copyLTC = document.getElementById("inputLitecoin");
 
             copyBTC.select();
-            copyEth.select();
-            copyLTC.select();
-            copyBTC.setSelectionRange(0, 99999); 
-            copyEth.setSelectionRange(0, 9999);
-            copyLTC.setSelectionRange(0, 9999);
+            copyBTC.setSelectionRange(0, 9999); 
 
             navigator.clipboard.writeText(copyBTC.value);
+
+            let copiedAlert = document.getElementById('copiedAlert')
+            
+            copiedAlert.style.marginTop = '10px';
+            
+            setTimeout(function() {
+                copiedAlert.style.marginTop = '-100px';
+            }, 2000);
+        };
+
+        function copyEth() {
+            var copyEth = document.getElementById("inputEthereum");
+
+
+            copyEth.select();
+            copyEth.setSelectionRange(0, 9999);
+
             navigator.clipboard.writeText(copyEth.value);
+
+            let copiedAlert = document.getElementById('copiedAlert')
+            
+            copiedAlert.style.marginTop = '10px';
+            
+            setTimeout(function() {
+                copiedAlert.style.marginTop = '-100px';
+            }, 2000);
+        };
+
+        function copyLTC() {
+            var copyLTC = document.getElementById("inputLitecoin");
+
+
+            copyLTC.select();
+            copyLTC.setSelectionRange(0, 9999);
+
             navigator.clipboard.writeText(copyLTC.value);
-            alert("Copied!")
-        } 
+
+            let copiedAlert = document.getElementById('copiedAlert')
+            
+            copiedAlert.style.marginTop = '10px';
+            
+            setTimeout(function() {
+                copiedAlert.style.marginTop = '-100px';
+            }, 2000);
+        };
+
 
 
         ///////////////////////////////////////////////////////////////////////////////////////
@@ -321,16 +344,17 @@
         ///////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////////////////////////////////////
 
+    let freePoints = document.getElementById('freePoints');
+    let pointsText = document.getElementById('pointsText');
+    let screen = document.getElementById('screen');
+    let screenText = document.getElementById('screenText');
+    let closeScreen = document.getElementById('closeScreen');
+    let closeText = document.getElementById('closeText');
+    let closeNotes = document.getElementById('closeNotes'); 
+    let notes = document.getElementById('notes');
+    let notesButton = document.getElementById('notesButton');
 
-        let freePoints = document.getElementById('freePoints');
-        let pointsText = document.getElementById('pointsText');
-        let screen = document.getElementById('screen');
-        let screenText = document.getElementById('screenText');
-        let closeScreen = document.getElementById('closeScreen');
-        let closeText = document.getElementById('closeText');
-        let closeNotes = document.getElementById('closeNotes');
-        let notes = document.getElementById('notes');
-        let notesButton = document.getElementById('notesButton');
+        
 
         freePoints.onclick = () => {
             screen.style.opacity = '1';
