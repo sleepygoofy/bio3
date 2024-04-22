@@ -584,3 +584,27 @@ h1, h2, h3, h4, h5, h6, a {
   color: white;
   transition: 0.3s;
 }
+
+.viewsMain {
+  user-select: none;
+  position: absolute;
+  color: white;
+  width: 100px;
+  height: 25px;
+  background-color: rgb(100,100,100, 0.6);
+  border-radius: 0.5em;
+  backdrop-filter: blur(10px);
+  margin-left: 272px;
+  margin-top: 21.2%;
+}
+
+.views {
+  position: absolute;
+  transform: translateY(10%);
+  margin-left: 5px;
+  color: white;
+}
+
+.viewIcon {
+  transform: translateY(2.5px);
+}
