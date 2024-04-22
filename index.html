@@ -232,9 +232,11 @@
             clickToEnterOverlay.style.opacity = '0';
             clickToEnterOverlay.style.transition = '0.75s';
             clickToEnterOverlay.style.zIndex = '-9999';
-            music.play();
+            setTimeout(function() {
+                music.play();
+            }, 300);
         };
-
+        
         muteButton.onclick = () => {
             count += 1;
             
