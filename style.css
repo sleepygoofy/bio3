@@ -584,25 +584,3 @@ h1, h2, h3, h4, h5, h6, a {
   color: white;
   transition: 0.3s;
 }
-
-.userLayout1_badgeContainerWrapper__KeHD7 {
-  display: flex;
-  justify-content: center;
-  margin-top: 19.15%;
-  width: 49%;
-  position: absolute;
-  margin-left: -1%;
-}
-
-.userPage_badgeContainer__yRM7q {
-  align-items: center;
-  background-color: rgb(75,75,75);
-  border-radius: 25px;
-  display: flex;
-  gap: 5.5px;
-  justify-content: center;
-  padding: 6px 10px;
-  backdrop-filter: blur(10px);
-  width: 15px;
-  border: 1px solid rgb(100,100,100);
-}
