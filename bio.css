@@ -4,6 +4,7 @@ body {
     -webkit-user-drag: none;
     margin: 0;
     user-select: none;
+    background-color: black;
 }
 
 .video {
