@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="https://easyfiles.cc/2024/4/cbeab8a7-b14d-4545-ac3e-d9bbfd7a2c90/RFbdMMB.ico">
+    <title>zy's bio</title>
+
+    <link rel="stylesheet" href="bio.css">
+    <link rel="stylesheet" href="testing.css">
+
+    
+    <script type="text/javascript">
+        function disableRightClick(event) {
+            event.preventDefault();
+        }
+        
+        document.addEventListener('contextmenu', disableRightClick);
+    </script>
+    
+    <meta property="og:title" content="zy's page">
+    <meta property="og:description" content="The BEST Bio Page!">
+    <meta property="og:image" content="https://easyfiles.cc/2024/4/97982e49-47e2-4756-9c2d-0c7e792e7f1c/vjkdvv.jpeg">
+    
+
+</head>
+<body>
+
+    <video class="video" id="video" loop src="https://easyfiles.cc/2024/4/72b6b139-b1db-4d88-a404-e5fb8c72adee/leavemealone.mp4"></video>
+
+    <div class="Main">
+
+        <div class="Intro" style="width: max-content;">
+            <h2> 
+                <img class="avatar" src="icons/pfp.png" width="52">
+                    <u class="Name">zyqunix</u>
+                </a>
+            </h2>
+            
+            <h3 class="desc" style="width: max-content;">
+                Amateur programmer and ROBLOX game developer
+            </h3>
+        </div>
+
+        <div class="Links">
+            <a class="yt" href="https://www.youtube.com/channel/UCS_LSx5Ccj9ti2EmrZ0OXVg" target="_blank">
+                <img class="yti" src="icons/white_youtube.png" width="36">
+            </a>
+
+            <a class="ghub" href="https://www.github.com/zyqunix" target="_blank">
+                <img class="ghubi" src="icons/white_github.png" width="36">
+            </a>
+
+            <a class="guns" href="https://zaza.bio/zyq" target="_blank">
+                <img class="gunsi" src="icons/white_guns.png" width="36">
+            </a>
+
+            <a class="ig" href="https://www.instagram.com/zyqunix" target="_blank">
+                <img class="igi" src="icons/white_instagram.png" width="36">
+            </a>
+
+            <a class="x" href="https://twitter.com/real_zyqunix" target="_blank">
+                <img class="xi" src="icons/twitter.png" width="36">
+            </a>
+
+            <input class="myInput" id="myInput" type="text" value="bc1qstlxvpqhalgrmwzj493tajrx24dv6p6utfjksy">
+            <button id="bitcoin" class="bitcoin" onclick="copyBTC()">
+                <img class="bitcoinIMG" src="icons/bitcoin123-removebg.png">
+
+            </button>
+
+            <input class="inputEthereum" id="inputEthereum" type="text" value="0x1E6D96999da353981D7863EbB3633b5DEd5e2949">
+            <button id="Ethereum" class="Ethereum" onclick="copyEth()">
+                <img class="ethIMG" src="icons/ethereum.png" width="36">
+
+            </button>
+
+            <input class="inputLitecoin" id="inputLitecoin" type="text" value="LbTYSdu6ARAhEPnpnkScxwn5vfVM2P8KgT">
+            <button id="Litecoin" class="Litecoin" onclick="copyLTC()">
+                <img class="ltIMG" src="icons/litecoin.png" width="36">
+
+            </button>
+
+        </div>
+    </div>
+
+    <svg class="muted" id="muted" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 48 48"><defs><mask id="ipTVolumeMute0"><mask id="ipTVolumeMute1" width="13" height="13" x="30" y="18" maskUnits="userSpaceOnUse" style="mask-type: alpha;"><path d="M30 18h13v13H30z"></path></mask><g fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="4"><g stroke-linecap="round" mask="url(#ipTVolumeMute1)"><path d="m40.735 20.286l-8.486 8.485m.001-8.485l8.485 8.485"></path></g>
+        <path fill="#555" d="M24 6v36c-7 0-12.201-9.16-12.201-9.16H6a2 2 0 0 1-2-2V17.01a2 2 0 0 1 2-2h5.799S17 6 24 6Z"></path></g></mask></defs><path fill="currentColor" d="M0 0h48v48H0z" mask="url(#ipTVolumeMute0)"></path>
+    </svg>
+        
+    <iframe class="iframe" src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+
+    <div class="userPage_clickToEnterOverlay__4kIhx" id="userPage_clickToEnterOverlay__4kIhx">
+        <div class="userPage_clickToEnterText__pAALW" id="userPage_clickToEnterText__pAALW" style="font-weight:700;font-size:32px">[click]</div>
+    </div>
+
+    <div class="copiedAlert" id="copiedAlert">
+        <h2 class="alertText">Copied!</h2>
+    </div>
+
+    <script>
+        let video = document.getElementById('video')
+        let main = document.getElementById('Main')
+        let count = 2;
+
+        video.volume = '0.25';
+
+        let clickToEnterOverlay = document.getElementById('userPage_clickToEnterOverlay__4kIhx');
+        let userPage_clickToEnterText__pAALW = document.getElementById('userPage_clickToEnterText__pAALW');
+
+
+        clickToEnterOverlay.onclick = () => {
+            clickToEnterOverlay.style.opacity = '0';
+            clickToEnterOverlay.style.transition = '0.75s';
+            clickToEnterOverlay.style.zIndex = '-9999';
+            video.play();
+        };
+
+
+        ///////////////////////////////////
+        function copyBTC() {
+            var copyBTC = document.getElementById("myInput");
+
+            copyBTC.select();
+            copyBTC.setSelectionRange(0, 9999); 
+
+            navigator.clipboard.writeText(copyBTC.value);
+
+            let copiedAlert = document.getElementById('copiedAlert')
+            
+            copiedAlert.style.marginTop = '10px';
+            
+            setTimeout(function() {
+                copiedAlert.style.marginTop = '-100px';
+            }, 2000);
+        };
+
+        function copyEth() {
+            var copyEth = document.getElementById("inputEthereum");
+
+
+            copyEth.select();
+            copyEth.setSelectionRange(0, 9999);
+
+            navigator.clipboard.writeText(copyEth.value);
+
+            let copiedAlert = document.getElementById('copiedAlert')
+            
+            copiedAlert.style.marginTop = '10px';
+            
+            setTimeout(function() {
+                copiedAlert.style.marginTop = '-100px';
+            }, 2000);
+        };
+
+        function copyLTC() {
+            var copyLTC = document.getElementById("inputLitecoin");
+
+
+            copyLTC.select();
+            copyLTC.setSelectionRange(0, 9999);
+
+            navigator.clipboard.writeText(copyLTC.value);
+
+            let copiedAlert = document.getElementById('copiedAlert')
+            
+            copiedAlert.style.marginTop = '10px';
+            
+            setTimeout(function() {
+                copiedAlert.style.marginTop = '-100px';
+            }, 2000);
+        };
+
+        
+    </script>
+</body>
+</html>
