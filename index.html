@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon"https://cdn.discordapp.com/avatars/1131084188729225326/bc84c2b7f0f906a6bb84bf763b21ca39.png?size=1024">
-    <title>@Jraw </title>
+    <link rel="shortcut icon" href="https://easyfiles.cc/2024/4/cbeab8a7-b14d-4545-ac3e-d9bbfd7a2c90/RFbdMMB.ico">
+    <title>zy's bio</title>
 
     <link rel="stylesheet" href="bio.css">
     <link rel="stylesheet" href="testing.css">
@@ -19,7 +19,7 @@
         document.addEventListener('contextmenu', disableRightClick);
     </script>
     
-    <meta property="og:title" content="Jraws's page">
+    <meta property="og:title" content="zy's page">
     <meta property="og:description" content="The BEST Bio Page!">
     <meta property="og:image" content="https://easyfiles.cc/2024/4/e0482551-b6a6-4739-bf0a-758756e8c464/RFbdMMB.png">
     
@@ -35,14 +35,35 @@
             <h2> 
                 <img class="avatar" src="icons/pfp.png" width="52">
                     <u class="Name">
-                           Jraw
+                        zyqunix
                     </u>
                 </a>
             </h2>
+
+            <div class="description">
+                <h3 class="desc" id="desc" style="width: max-content;"></h3>
+            </div>
             
-            <h3 class="desc" style="width: max-content;">
-                    Learning Developer and GTA player
-            </h3>
+           <div class="discord">
+
+                <div class="dcNameMain">
+                    <div class="dcName">Jraw</div>
+                    <img class="dcBadge2" src="https://cdn.discordapp.com/badge-icons/8a88d63823d8a71cd5e390baa45efa02.png" alt="">
+                </div>
+                
+
+                <div class="activityNames">
+                    <div class="streaming"></div>
+                    <div class="activityName">
+                        <b>Streaming</b>
+                        Visual Studio Code
+                    </div>
+                    <div class="activityName2"></div>
+                </div>
+                
+                <img src="https://cdn.monkxy.com/u/f5uKF6.png" alt="" class="activityIMG">
+                <img src="https://cdn.discordapp.com/avatars/1131084188729225326/bc84c2b7f0f906a6bb84bf763b21ca39.webp?size=1024&format=webp&width=0&height=384" alt="" class="dcPFP">
+           </div>
         </div>
 
         <div class="Links">
@@ -62,7 +83,7 @@
                 <img class="igi" src="icons/white_instagram.png" width="36">
             </a>
 
-            <a class="x" href="https://twitter.com/not_jraw" target="_blank">
+            <a class="x" href="https://twitter.com/notjraw" target="_blank">
                 <img class="xi" src="icons/twitter.png" width="36">
             </a>
 
@@ -95,12 +116,10 @@
     <iframe class="iframe" src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
 
     <div class="userPage_clickToEnterOverlay__4kIhx" id="userPage_clickToEnterOverlay__4kIhx">
-        <div class="userPage_clickToEnterText__pAALW" id="userPage_clickToEnterText__pAALW" style="font-weight:700;font-size:32px">[click To Enter]</div>
+        <div class="userPage_clickToEnterText__pAALW" id="userPage_clickToEnterText__pAALW" style="font-weight:700;font-size:32px">[click]</div>
     </div>
 
-    <div class="copiedAlert" id="copiedAlert">
-        <h2 class="alertText">Link not in use!</h2>
-    </div>
+    <div class="copiedAlert" id="copiedAlert">Copied!</div>
 
     <!--
 
@@ -111,8 +130,36 @@
 
     <script>
 
+        const texts = ["I need Money", "  Prob coding"];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeWriter() {
+            const currentText = texts[textIndex];
+            if (isDeleting) {
+                document.getElementById("desc").textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                document.getElementById("desc").textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentText.length + 1) {
+                isDeleting = true;
+                setTimeout(typeWriter, 1500); // Delay before deleting
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                setTimeout(typeWriter, 1000); // Delay before typing next text
+            } else {
+                setTimeout(typeWriter, 100); // Typing speed
+            }
+        }
+
+
+        
         let video = document.getElementById('video')
-        let count = 2;
         video.volume = '0.25';
 
         let clickToEnterOverlay = document.getElementById('userPage_clickToEnterOverlay__4kIhx');
@@ -124,6 +171,7 @@
             clickToEnterOverlay.style.transition = '0.75s';
             clickToEnterOverlay.style.zIndex = '-9999';
             video.play();
+            typeWriter();
         };
 
 
